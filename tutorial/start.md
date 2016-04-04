@@ -1,4 +1,4 @@
-# Agirando e nimator
+# Animator
 
 Si tratta di disegnare un semplice e simpatico personaggio *Cubetto* e muoverlo per lo schermo del telefonino con dei 
 semplici tap. Ogni volta che tocchiamo lo schermo cubetto raggiungerà il punto toccato girando e cambiando dimensione.
