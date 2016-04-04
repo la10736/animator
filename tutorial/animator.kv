@@ -1,0 +1,38 @@
+#:kivy 1.0.9
+#:set nero (0, 0, 0)
+#:set bianco (1, 1, 1)
+#:set rosso (1, 0, 0)
+#:set verde (0, 1, 0)
+#:set blu (0, 0, 1)
+
+<Cubetto>:
+    height: self.width
+    canvas:
+        Color:
+            rgb: rosso
+        Rectangle:
+            pos: self.pos
+            size: self.size
+        Rotate:
+            angle: 45
+            origin: self.center
+        Color:
+            rgb: blu
+        Rectangle:
+            pos: self.pos
+            size: self.size
+        Color:
+            rgb: nero
+        Ellipse:
+            pos: self.pos
+            size: self.size
+
+
+<Animator>:
+    cubetto: cubetto_id
+
+    Cubetto:
+        id: cubetto_id
+        center: root.width*0.5, root.height * 0.5
+        size_hint: None,None
+        width: dp(50)

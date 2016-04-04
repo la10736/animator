@@ -1,0 +1,50 @@
+#:kivy 1.0.9
+
+#:set black (0, 0, 0)
+#:set white (1, 1, 1)
+#:set red (1, 0, 0)
+#:set green (0, 1, 0)
+#:set blue (0, 0, 1)
+
+
+<Component>:
+    canvas.before:
+        PushMatrix
+        Rotate:
+            angle: self.angle
+            axis: 0, 0, 1
+            origin: self.center
+    canvas.after:
+        PopMatrix
+
+    height: self.width
+    canvas:
+        Color:
+            rgb: red
+        Rectangle:
+            pos: self.pos
+            size: self.size
+        Rotate:
+            angle: 45
+            origin: self.center
+        Color:
+            rgb: blue
+        Rectangle:
+            pos: self.pos
+            size: self.size
+        Color:
+            rgb: black
+        Ellipse:
+            pos: self.pos
+            size: self.size
+
+
+<Animator>:
+    component: component
+
+    Component:
+        id: component
+        pos_hint: {"center_x": 0.05, "center_y": 0.5}
+        # angle: 30
+        size_hint: None,None
+        width: dp(50)
