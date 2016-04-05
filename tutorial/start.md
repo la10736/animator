@@ -16,7 +16,7 @@ piccolo.
 Usate [Compilare e Installare](https://github.com/la10736/acchiappa/tree/master/appendici/compila_e_installa.md) per 
 provare il gioco vuoto e come metterlo sul vostro telefonino. Facciamo questo prima di iniziare.
 
-Il programma vuoto contiene il file [`main.py`](vuoto.py) così:
+Il programma vuoto contiene il file `main.py` così:
 
 ```python
 from kivy.app import App
@@ -36,7 +36,7 @@ if __name__ == "__main__":
     AnimatorApp().run()
 ```
 
-e il file [`animator.kv`](vuoto.kv)
+e il file `animator.kv`
 
 ```kv
 #:kivy 1.0.9
