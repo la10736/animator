@@ -32,7 +32,7 @@ contenute in `touch.pos`:
 
 Prima di spostare cubetto bisogna fare in maniera che `Animator` conosca cubetto. Per far questo aggiungiamo una
 proprietà a `Animator` di tipo oggetto e *attachiamoci* cubetto. Nel file `main.py` bisogna aggiungere in alto
-`from kivy.properties import ObjectProperty` e nella class `Animator` la nuova property:
+`from kivy.properties import ObjectProperty` e nella classe `Animator` la nuova property:
 
 ```python
 from kivy.properties import ObjectProperty
@@ -45,7 +45,7 @@ class Animator(FloatLayout):
     ....
 ```
 
-Ora dobbiamo assciare quest property al componente `Cubetto` creto nel file `animator.kv`:
+Ora dobbiamo associare questa property al componente `Cubetto` creato nel file `animator.kv`:
 
 ```
 <Animator>:
@@ -56,13 +56,13 @@ Ora dobbiamo assciare quest property al componente `Cubetto` creto nel file `ani
         ...
 ```
 
-Notate che alla base di `Animator` abbiamo messo `cubetto` come quello della classe per poi associare quel valore a 
-`id` di `Cubetto`.
+Nota: alla base di `Animator` abbiamo messo `cubetto` come quello della classe per poi associare quel valore a 
+`id` del `Cubetto` creato dentro `<Animator>`.
 
 
-Bene ora possiamo spostare `cubetto` quando siamo nel componente `Animator` semplicemente cambiandogli le sue
+Bene ora possiamo spostare `cubetto` dal componente `Animator` semplicemente cambiandogli le sue
 coordinate o il suo centro: se dentro `on_touch_down()` mettiamo `self.cubetto.center = touch.pos` spostiamo cubetto
-nel punto toccato:
+nel punto toccato ( `touch.pos` ):
 
 ```
 class Animator(FloatLayout):
@@ -87,9 +87,10 @@ Invece di usare il teletrasporto vogliamo che cubetto arrivi morbidamente nella 
 State dicendo di costruire una animazione che sposta il centro in `touch.pos` che dura 1 secondo (se non si indica 
 `duration` la durata è un secondo), che traforma *linearmente* (se non si indica `t`).
 
-E' possibile cambiare più proprietà contemporaneamente (lo vediamo dopo), cambiare la durata e il tipo si trasformazione.
+E' possibile cambiare più proprietà contemporaneamente (lo vediamo dopo), cambiare la durata e il tipo di 
+trasformazione.
 
-Provate a giocare usando le seguenti:
+Provate a giocare usando le seguenti modifiche:
 
 * `animation = Animation(center=touch.pos, duration=2)`
 * `animation = Animation(center=touch.pos, duration=0.5)`
@@ -97,7 +98,8 @@ Provate a giocare usando le seguenti:
 * `animation = Animation(center=touch.pos, t='out_back')`
 * `animation = Animation(center=touch.pos, t='out_bounce')`
 
-tutti i valori possibili di `t` si trovano alla [pagina di ducumentazione di kivy](https://kivy.org/docs/api-kivy.animation.html).
+tutti i valori possibili di `t` si trovano alla 
+[pagina di ducumentazione di kivy](https://kivy.org/docs/api-kivy.animation.html).
 
 Mettete come valore adesso:
 ```python

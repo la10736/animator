@@ -1,6 +1,6 @@
-# Cubetto Cubetto Rotola
+# Cubetto Rotola
 
-Dobbiamo far rotolare, anzi ruotare suse stesso. Sappiamo già come fare per *ruotare il foglio di disegno* dove
+Dobbiamo far rotolare, anzi ruotare su se stesso cubetto. Sappiamo già come fare per *ruotare il foglio di disegno* dove
 cubetto viene disegnato. Dobbiamo solo fare in maniera di poter scegliere l'angolo senza doverlo scrivere a mano.
 
 ## Ruotiamo Cubetto
@@ -18,7 +18,7 @@ Nella tela ( `canvas` ) di `<Cubetto>` facciamo una rotazione di 32 prima di tut
         ...
 ```
 
-Adesso cumetto è ruotato.
+Adesso cubetto è girato.
 
 ## angolo, una nuova proprietà di Cubetto
 
@@ -36,7 +36,7 @@ class Cubetto(Widget):
     angolo = NumericProperty(32)
 ```
 
-**GRANDE** Ora possiamo sostituire nel file `animator.kv` il numero 32 con `self.angolo`:
+**GRANDE**: Ora possiamo sostituire nel file `animator.kv` il numero 32 con `self.angolo`:
 
 ```
 <Cubetto>:
@@ -48,7 +48,7 @@ class Cubetto(Widget):
         ...
 ```
 
-Ora cambiando `angolo` di cubetto possiamo ruotarlo. Facciamo a ogni movimento.
+Ora cambiando `angolo` di cubetto possiamo ruotarlo. Facciamolo a ogni movimento.
  
 ## Rotazione.... morbida
 
@@ -62,7 +62,7 @@ sommando `417` al vecchio.
 Ancora un piccolo sforzo:
 
 1. `417` lo chiamiamo `INCREMENTO_ANGOLO`
-2. faciamo una funziona `ruota()` per calcolare il `nuovo_angolo`
+2. facciamo una funziona `ruota()` per calcolare il `nuovo_angolo`
 
 ```python
 class Animator(FloatLayout):

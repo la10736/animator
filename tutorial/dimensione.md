@@ -1,10 +1,10 @@
 # Cubetto Cambia Dimesione
 
-Per cambiare la dimensione di cubetto basta cambiare la sua `width` che all'inizio abbiamo messo a `dp(50)`.
+Per cambiare la dimensione di cubetto basta cambiare la sua `width` che all'inizio abbiamo fissato a `dp(50)`.
 
 1. Prima proviamo a aumentare la dimesione quando facciamo il tap
 2. La modifica la facciamo diventare *morbida*
-3. Quando tappiamo a destro la dimensione diminuisce e quando tappiamo a sinistra aumenta
+3. Quando tappiamo a destra la dimensione diminuisce e quando tappiamo a sinistra aumenta
 
 ## Aumentiamo la dimensione
 
@@ -20,7 +20,8 @@ Aumentiamo la dimensione di `1.3`. Quindi quando facciamo `on_touch_down()` prim
 e proviamo...
 
 **Bene** ... ora ripuliamo facendo diventare `1.3` un numero facile da modificare e usando una funzione fare il calcolo.
-Cambiamo `Animator` in questa maniera:
+
+La classe `Animator` diventa:
 
 ```python
 class Animator(FloatLayout):
@@ -39,9 +40,9 @@ class Animator(FloatLayout):
 
 ## Cambiamo la dimensione morbidamente
 
-Per cambiare la dimensione *mobidamente* basta cambiare l'animazione `Animator` dicendogli di modificare anche `width`
-oltre a `center`: `Animation(center=touch.pos, width=larghezza t='in_out_quad')`. Togliamo anche  la modifica istantanea
-che ora non serve.
+Per cambiare la dimensione *morbidamente* basta cambiare l'animazione `Animator` dicendogli di modificare anche `width`
+oltre a `center`: `Animation(center=touch.pos, width=larghezza t='in_out_quad')`. Togliamo anche la modifica istantanea
+che ora non serve più.
 
 ```python
     def on_touch_down(self, touch):
@@ -50,7 +51,7 @@ che ora non serve.
         animation.start(self.cubetto)
 ```
 
-Ora è bello *mobido*.
+Ora è bello *morbido*.
 
 ## Ingrandiamo e Rimpiccioliamo
 

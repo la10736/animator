@@ -44,7 +44,7 @@ class Cubetto(Widget):
     pass
 ```
 
-Riproviamo... ora funziona me è ancora tutto nero: giusto ... ci siamo dimenticati di disegnare i quadrato. Dentro
+Riproviamo... ora funziona me è ancora tutto nero: giusto ... ci siamo dimenticati di disegnare il quadrato. Dentro
 `animator.kv` modifichiamo `<Cubetto>` come
 
 ```
@@ -106,7 +106,7 @@ diventa `rgb: (1,0,0)`
 
 Proviamo e ... **ecco il quadrato rosso**.
 
-Prima di andare avanti costruiamoci un po di colori da usare invece dei numeri: all'inizio del file `animator.kv`
+Prima di andare avanti costruiamoci un po di colori da usare invece dei numeri: all'inizio di `animator.kv`
 aggiungiamo i nostri colori e sostuiamo `(1,0,0)` con rosso.
 
 ```
