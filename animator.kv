@@ -1,26 +1,18 @@
 #:kivy 1.0.9
+#:set nero (0, 0, 0)
+#:set bianco (1, 1, 1)
+#:set rosso (1, 0, 0)
+#:set verde (0, 1, 0)
+#:set blu (0, 0, 1)
 
-#:set black (0, 0, 0)
-#:set white (1, 1, 1)
-#:set red (1, 0, 0)
-#:set green (0, 1, 0)
-#:set blue (0, 0, 1)
-
-
-<Component>:
-    canvas.before:
-        PushMatrix
-        Rotate:
-            angle: self.angle
-            axis: 0, 0, 1
-            origin: self.center
-    canvas.after:
-        PopMatrix
-
+<Cubetto>:
     height: self.width
     canvas:
+        Rotate:
+            angle: self.angolo
+            origin: self.center
         Color:
-            rgb: red
+            rgb: rosso
         Rectangle:
             pos: self.pos
             size: self.size
@@ -28,23 +20,22 @@
             angle: 45
             origin: self.center
         Color:
-            rgb: blue
+            rgb: blu
         Rectangle:
             pos: self.pos
             size: self.size
         Color:
-            rgb: black
+            rgb: nero
         Ellipse:
             pos: self.pos
             size: self.size
 
 
 <Animator>:
-    component: component
+    cubetto: cubetto_id
 
-    Component:
-        id: component
-        pos_hint: {"center_x": 0.05, "center_y": 0.5}
-        # angle: 30
+    Cubetto:
+        id: cubetto_id
+        center: root.width*0.5, root.height * 0.5
         size_hint: None,None
         width: dp(50)

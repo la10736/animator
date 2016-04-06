@@ -1,39 +1,37 @@
 from kivy.animation import Animation
 from kivy.app import App
-from kivy.properties import NumericProperty, ObjectProperty
+from kivy.properties import ObjectProperty, NumericProperty
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.widget import Widget
 
 
-class Component(Widget):
-    angle = NumericProperty()
+class Cubetto(Widget):
+    angolo = NumericProperty(32)
 
 
 class Animator(FloatLayout):
-    component = ObjectProperty(None)
-    INCREMENTO_ANGOLO = 476
+    cubetto = ObjectProperty(None)
     INCREMENTO_LARGHEZZA = 1.3
-    TRANSIZIONE = "in_out_circ"
-
-    def libera_component(self):
-        self.component.pos_hint = {}
-        self.component.size_hint = None, None
-
-    def riduci_larghezza(self):
-        return self.component.width / self.INCREMENTO_LARGHEZZA
-
-    def aumenta_larghezza(self):
-        return self.component.width * self.INCREMENTO_LARGHEZZA
+    INCREMENTO_ANGOLO = 417
 
     def on_touch_down(self, touch):
-        self.libera_component()
+        x, y = touch.pos
+        if x > self.width/2:
+            larghezza = self.rimpicciolisci()
+        else:
+            larghezza = self.ingrandisci()
+        nuovo_angolo = self.ruota()
+        animation = Animation(center=touch.pos, width=larghezza, angolo=nuovo_angolo, t='in_out_quad')
+        animation.start(self.cubetto)
 
-        nuovo_angolo = self.component.angle + self.INCREMENTO_ANGOLO
-        nuova_larghezza = self.aumenta_larghezza() if touch.x < self.width/2 else self.riduci_larghezza()
-        Animation(center=touch.pos,
-                  angle=nuovo_angolo,
-                  width=nuova_larghezza,
-                  t=self.TRANSIZIONE).start(self.component)
+    def ruota(self):
+        return self.cubetto.angolo + self.INCREMENTO_ANGOLO
+
+    def ingrandisci(self):
+        return self.cubetto.width * self.INCREMENTO_LARGHEZZA
+
+    def rimpicciolisci(self):
+        return self.cubetto.width / self.INCREMENTO_LARGHEZZA
 
 
 class AnimatorApp(App):
