@@ -6,7 +6,7 @@ cubetto viene disegnato. Dobbiamo solo fare in maniera di poter scegliere l'ango
 ## Ruotiamo Cubetto
 
 Quindi se vogliamo ruotare cubetto di 32 gradi dobbiamo *ruotare la tela di 32 gradi prima di disegnare il resto*. 
-Nella tela ( `canvas` ) di `<Cubetto>`facciamo una rotazione di 32 prima di tutto il resto: `animator.kv`
+Nella tela ( `canvas` ) di `<Cubetto>` facciamo una rotazione di 32 prima di tutto il resto: `animator.kv`
  
 ```
 <Cubetto>:
