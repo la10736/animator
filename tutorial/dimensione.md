@@ -92,6 +92,6 @@ quindi `on_touch_down()` diventa
 Tutto morbido e si muove come vogliamo.
 
 
-* [**NEXT** Muoviamo Cubetto](muovi.md)
-* [**PREV** Cubetto Rotola](rotola.md)
+* [**NEXT** Cubetto Rotola](rotola.md)
+* [**PREV** Muoviamo Cubetto](muovi.md)
 * [**INDEX** Indice](start.md)
